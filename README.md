@@ -13,6 +13,7 @@ We only have one camera when we did this project :) So in this project we used t
 
 
 Cloud component url: queenchrysalisproject.northeurope.azurecontainer.io
+
 Note: it is disabled, because I ran out my free credits on Azure so I can't keep it running 24/7. If you want to have a look please contact me so that I can lauch it for a short time.
 
 # Branches:
