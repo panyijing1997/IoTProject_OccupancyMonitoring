@@ -84,3 +84,8 @@ $ python3 app.py
 
 
 Then visit `localhost:8080`
+
+### Some screenshots
+
+![](./images/1.png)
+![](./images/2.png)
