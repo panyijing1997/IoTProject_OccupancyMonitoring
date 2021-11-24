@@ -2,6 +2,8 @@
 
 Study Space Occupancy Monitoring -- Project for the course Building the Internet of Things with P2P and Cloud Computing.
 
+Authors: Yijing Pan, Cheng Huang
+
 Main techs/libs used in this project:
 - Backend: Flask
 - Frontend: Bootstrap, Axios
