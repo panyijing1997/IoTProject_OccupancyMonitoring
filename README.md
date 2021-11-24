@@ -9,7 +9,7 @@ Note: it is disabled, because I ran out my free credits on Azure so I can't keep
 
 First, make sure that the camera & deeplearning for people detection component from branch `main` is running (`publisher\cam.py`), and change the configuration of the mqtt client in `app.py` in this branch connection to make it connect to your own cloud broker. 
 
-If `publisher\cam.py` from the branch `main` is not running, then no clients publish new data, so you can only see histric data and you can't check live photo as well.
+If `publisher\cam.py` from the branch `main` is not running, then no clients publish new data, so you can only see histric data and you can't check live photo.
 
 ### switch to this branch, build and run the docker image.
 
