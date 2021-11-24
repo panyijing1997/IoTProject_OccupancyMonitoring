@@ -1,0 +1,11 @@
+user ledc
+topic readwrite test1
+
+user ledc
+topic read #
+
+user local
+topic read #
+
+user local
+topic write #
