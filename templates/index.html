@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- import bootstrap5   -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <!-- import index.css -->
+    <link rel="stylesheet" href="../static/css/index.css">
+    <!-- import fa -->
+    <link rel="stylesheet" href="../static/fa/css/all.min.css">
+    <!-- import base.css -->
+    <link rel="stylesheet" href="../static/css/base.css">
+
+</head>
+<body>
+    <div class="topbar-wrapper">
+        <div class="topbar">
+            <i class="fas fa-envelope"></i>
+            <span>yijingpan@foxmail.com ｜ huangchengadam@gmail.com</span>
+        </div>
+    </div>
+    <div class="middle-wrapper">
+        <div class="middle">
+            <h1 class="logo">
+                <a href="javascript:;" class="pony"></a>
+            </h1>
+            <!-- <img src="../static/img/7091635508858_.pic.jpg" alt=""> -->
+            <a href="javascript:;">
+                <span>Queen Chrysalis ｜ All by Yijing Pan & Cheng Huang</span>
+            </a>
+            <button type="button" class="btn btn-danger" id="login">Login To Check Live Photo</button>
+            <!--<button type="button" class="btn btn-primary" id="refresh">Refresh</button>-->
+        </div>
+    </div>
+    <div class="banner-wrapper">
+        <div class="banner">
+            <table class="table table-borderless" >
+                <thead class="thead">
+                  <tr>
+                    <th>Room Number</th>
+                    <th>Number of Person</th>
+                    <th>Live Photo</th>
+                    <th>History Data</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="window">
+                <img class="popimage" src="../../../Project_front/IoT-Final-Project-Frontend-Flask/static/img/logo.jpg" alt="">
+                <button id="close" type="button" class="btn btn-info">Close</button>
+                <span class="info">
+                    <i class="fas fa-home"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wrapper">
+        <div class="footer">
+            <h5>Queen Chrysalis ｜ Final Project</h5>
+            <span>
+            On the index page you can see the live data of numbers of people in each room! The numbers are approximated and if
+                the number is over 12 it will be shown in red.
+                To find a room with enough study space for you, you can choose a room with green number and have a look at the live photo
+                of the room, but you need to login to see the photo :)
+            </span>
+        </div>
+    </div>
+     
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+    <script>
+        // get All room data
+        axios({
+            method:'GET',
+            url:'/getData',
+        }).then(response=>{
+            var data = response.data;
+            getTableData(data);
+        });
+        // refresh button
+        //var refresh = document.getElementById("refresh");
+        //refresh.addEventListener("click",()=>{
+          //      axios({
+            //    method:'GET',
+              //  url:'/getData',
+           // }).then(response=>{
+             //   var data = response.data;
+               // getTableData(data);
+            //})
+        //});
+        //getTableData function
+        function getTableData(data){
+            var tbody = document.querySelector(".banner-wrapper .banner tbody");
+            var trs = document.querySelectorAll(".banner-wrapper .banner tbody tr");
+            //reomove trs first
+            for(var i = 0; i < trs.length; i ++){
+                tbody.removeChild(trs[i]);
+            }
+            for(var i = 0; i < data.length; i ++){
+                var tr = document.createElement("tr");
+                var roomNumber = document.createElement("td");
+                roomNumber.innerHTML = data[i].roomNumber;
+                var roomNumberParam = data[i].roomNumber;
+                var number = document.createElement("td");
+                number.innerHTML = "<i class='fas fa-circle'></i>"+data[i].number;
+                if(data[i].number >= 12){
+                    number.style.color = "red";
+                }else{
+                    number.style.color = "green";
+                }
+                var photo = document.createElement("td");
+                var aphoto = document.createElement("a");
+                aphoto.innerHTML = "Check";
+                aphoto.href = "/photo/"+roomNumberParam;
+                //loop binding function event
+                //(function (roomNumberParam) {
+                //    aphoto.onclick = function(){
+                //       popUpImage(roomNumberParam)
+                //    }
+                //})(roomNumberParam);
+                photo.appendChild(aphoto);
+                var history = document.createElement("td");
+                var ahistory = document.createElement("a"); 
+                ahistory.href = "/history/"+roomNumberParam;
+                ahistory.innerHTML = "Check";
+                history.appendChild(ahistory);
+                tr.appendChild(roomNumber);
+                tr.appendChild(number);
+                tr.appendChild(photo);
+                tr.appendChild(history);
+                tbody.appendChild(tr);
+            }
+        };
+        var closeButton = document.getElementById("close");
+        var windowDiv = document.querySelector(".banner-wrapper .banner .window");
+        var popimg =  document.querySelector(".banner-wrapper .banner .window .popimage");
+        var roominfo = document.querySelector(".banner-wrapper .banner .window .info");
+        //popUpImage 
+        function popUpImage(roomNumber){
+            axios({
+                method:'GET',
+                url:'/getPhoto',
+                params : {
+                    "roomNumber": roomNumber
+                }
+            }).then(response=>{
+                windowDiv.style.display = "block";
+                popimg.src = response.data;
+                roominfo.innerHTML = '<i class="fas fa-home"></i>' + "room no." + roomNumber
+            })
+        }
+        //get Close button
+        closeButton.onclick = function(){
+            windowDiv.style.display = "none";
+        }
+        setInterval(()=>{
+            axios({
+                method:'GET',
+                url:'/getData',
+            }).then(response=>{
+                var data = response.data;
+                getTableData(data);
+            })
+        }, 3000)
+        let login = document.getElementById("login");
+        login.onclick = function (){
+            window.location.href="/loginPage";
+        }
+    </script>
+</body>
+</html>
