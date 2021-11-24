@@ -87,5 +87,5 @@ Then visit `localhost:8080`
 
 ### Some screenshots
 
-![](./img/1.png)
-![](./img/2.png)
+![](./images/1.png)
+![](./images/2.png)
