@@ -38,6 +38,8 @@ $ pip3 install flask-mqtt
 $ pip3 install paho-mqtt
 ```
 
+(We tried to wrap every component respectively into a docker image to and to use docker compose to run them together. However we didn't make it due to some errors with install some denpendencies into a docker image)
+
 ### 2. Clone this repo and go to the root directory
 
 ```shell
