@@ -1,12 +1,15 @@
 # StudySpaceMonitoring
 
-Study Space Occupancy Monitoring -- Project for the course Building the Internet of Things with P2P and Cloud Computing
+Study Space Occupancy Monitoring -- Project for the course Building the Internet of Things with P2P and Cloud Computing.
 
 Main techs/libs used in this project:
 - Backend: Flask
 - Frontend: Bootstrap, Axios
+- Camera: Pi camera model v2
 - DeepLearning/Image Recoginition: TensorFlow Lite
 - Mqtt: Paho.mqtt (for Python), Mosquitto, Flask_mqtt
+
+We only have one camera when we did this project :) So in this project we used two video sources: a Pi-camera model V2 for real-time vedio feed, and a pre-record vedio. And in the database there are already some synthetic data records, for showing some functionanlities (such as showing history data).
 
 # Branches:
 
@@ -20,10 +23,19 @@ Main techs/libs used in this project:
 
 # Set up for this branch.
 
+Make sure that the Pi camera is connected to your RPi, and change the configuration of the client (`c_cloud` in `publisher\cam.py`) which needs to connect to a cloud broker to make it connect to your own cloud broker.
+
 ### 1. Install python denpendencies
 
 ```shell
-$ pip3 install 
+$ pip3 install argparse
+$ pip3 install numpy==1.21.0
+$ pip3 install opencv-python~=4.5.3.56
+$ pip3 install tflite-runtime==2.5.0
+$ pip3 install datetime
+$ pip3 install flask
+$ pip3 install flask-mqtt
+$ pip3 install paho-mqtt
 ```
 
 ### 2. Clone this repo and go to the root directory
@@ -60,3 +72,5 @@ From the root directory of this repo
 $ python3 app.py
 ```
 
+
+Then visit `localhost:8080`
