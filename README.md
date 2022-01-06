@@ -16,9 +16,7 @@ Main techs/libs used in this project:
 We only have one camera when we did this project :) So in this project we used two video sources: a Pi-camera model V2 for real-time vedio feed, and a pre-record vedio. And in the database there are already some synthetic data records, for showing some functionanlities (such as showing history data).
 
 
-Cloud component url: queenchrysalisproject.northeurope.azurecontainer.io
-
-Note: it is disabled, because I ran out my free credits on Azure so I can't keep it running 24/7. If you want to have a look please contact me so that I can lauch it for a short time.
+Cloud component url: queenchrysalisproject.northeurope.azurecontainer.io (It is disabled now)
 
 # Branches:
 
