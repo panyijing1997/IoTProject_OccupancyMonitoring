@@ -57,20 +57,18 @@ $ cd studyspacemonitoring
 
 ### 3. build the local broker docker image and run it
 
-From the root directory of this repo
+In the `mqtt` folder:
 
 ```shell
-$ cd mqtt 
 $ docker build -t localbroker .
 $ docker run -p 1883:1883 localbroker
 ```
 
 ### 4. Run camera and deeplearning for people detection components
 
-From the root directory of this repo
+In the `publisher` folder:
 
 ```shell
-$ cd publisher
 $ python3 cam.py
 ```
 
