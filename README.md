@@ -1,6 +1,6 @@
 # StudySpaceMonitoring
 
-Study Space Occupancy Monitoring -- Project for the course Building the Internet of Things with P2P and Cloud Computing.
+Study Space Occupancy Monitoring -- A nooby project for the course Building the Internet of Things with P2P and Cloud Computing :D
 
 <img src="./images/3.png" width="700"/>
 
