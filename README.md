@@ -2,6 +2,8 @@
 
 Study Space Occupancy Monitoring -- Project for the course Building the Internet of Things with P2P and Cloud Computing.
 
+<img src="./images/3.png" width="800"/>
+
 A prototype system based on Raspberry Pi, utilizing a deep learning approach combined with camera video feeds to estimate number of people in certain study spaces and providing live and historical information of study space occupancy to users.
 
 Authors: [Yijing Pan](https://github.com/panyijing1997), [Cheng Huang](https://github.com/kouteisang)
@@ -83,7 +85,7 @@ $ python3 app.py
 
 Then visit `localhost:8080`
 
-### Some screenshots
+### Display
 
 ![](./images/1.png)
 ![](./images/2.png)
