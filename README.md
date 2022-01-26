@@ -15,6 +15,8 @@ Main techs/libs used in this project:
 - DeepLearning/Image Recoginition: TensorFlow Lite
 - Mqtt: Paho.mqtt (for Python), Mosquitto, Flask_mqtt
 
+The deep learning model we use: https://tfhub.dev/tensorflow/efficientdet/lite4/detection/2
+
 We only have one camera when we did this project :) So in this project we used two video sources: a Pi-camera model V2 for real-time vedio feed, and a pre-record vedio. And in the database there are already some synthetic data records, for showing some functionanlities (such as showing history data).
 
 
