@@ -88,5 +88,6 @@ Then visit `localhost:8080`
 ### Display
 <img src="./images/1.png" width="500"/>
 <img src="./images/2.png" width="500"/>
+*Performance of the people detection (for test, red boxes never show in the application)*
 <img src="./images/4.png" width="500"/>
 <img src="./images/5.png" width="500"/>
