@@ -53,7 +53,7 @@ $ pip3 install paho-mqtt
 ### 2. Clone this repo and go to the root directory
 
 ```shell
-$ git clone https://gitlab.au.dk/au671364/studyspacemonitoring.git
+$ git clone https://github.com/panyijing1997/IoTProject_OccupancyMonitoring.git
 $ cd studyspacemonitoring
 ```
 
